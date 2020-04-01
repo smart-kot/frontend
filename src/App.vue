@@ -8,8 +8,11 @@
       <v-container
         class="fill-height"
         fluid
+
       >
-        <router-view />
+        <v-layout column wrap align-center>
+          <router-view class="text-xs-center"/>
+        </v-layout>
       </v-container>
     </v-content>
 
