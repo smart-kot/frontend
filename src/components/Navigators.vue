@@ -22,6 +22,18 @@
             <v-list-item-title>Settings</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <router-link id="router" to="/login">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-login</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Login/SignUp</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+         
+        
       </v-list>
     </v-navigation-drawer>
 
@@ -71,6 +83,11 @@ export default {
 </script>
 
 <style>
+#router {
+    text-decoration: none;
+    color: #7e6d6d
+}
+
 v-app-bar {
     top:0px;
 }
