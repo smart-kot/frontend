@@ -29,11 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
-  h1, p {
-    color: #7e6d6d
-  }
-
+<style>
   #cardContent {
     padding: 20px;
   }
