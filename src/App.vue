@@ -8,11 +8,18 @@
       <v-container
         class="fill-height"
         fluid
-
+        justify-center
       >
-        <v-layout column wrap align-center>
-          <router-view class="text-xs-center"/>
-        </v-layout>
+        <v-row
+          class="text-center"
+        >
+          <v-col
+            cols="12"
+          >
+            <router-view class="text-center"/>
+          </v-col>
+        </v-row>
+          
       </v-container>
     </v-content>
 
@@ -32,6 +39,10 @@ import Navigators from './components/Navigators'
 </script>
 
 <style>
+
+h1, p {
+  color: #7e6d6d
+}
 
 router-link{
     text-decoration: none;
