@@ -46,21 +46,30 @@
           @click.stop="drawer = !drawer"
           color="#7e6d6d"
       />
+
         <template v-slot:img="{ props }">
           <v-img
             v-bind="props"
           ></v-img>
         </template>
-      <v-img
-          alt="smart-kot logo"
-          class="shrink mr-2"
-          contain
-          src="../assets/logo.png"
-          transition="scale-transition"
-          width="200"
-          @click.stop="drawer = !drawer"
-        />
+        <router-link id="router" to="/">
+          <v-img
+              alt="smart-kot logo"
+              class="shrink mr-2"
+              contain
+              src="../assets/logo.png"
+              transition="scale-transition"
+              width="200"
+              @click.stop="drawer = !drawer"
+          />
+        </router-link> 
         <v-spacer></v-spacer>
+        <v-btn icon
+          color="#ffffff"
+          href="https://discordapp.com/channels/694897033492037653"
+        >
+          <v-icon>mdi-discord</v-icon>
+        </v-btn>
         <v-btn icon
           color="#ffffff"
           href="https://github.com/smart-kot"
