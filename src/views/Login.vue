@@ -47,7 +47,43 @@
             </v-card-title>
           </v-img>
           <v-card-text>
-            Login
+            <v-text-field
+              v-model="message1"
+              label="First Name"
+              clearable
+            ></v-text-field>
+            <v-text-field
+              v-model="message1"
+              label="Last Name"
+              clearable
+            ></v-text-field>
+            <v-text-field
+              v-model="message1"
+              label="E-mail"
+              clearable
+            ></v-text-field>
+            <v-text-field
+            v-model="input.password"
+            :append-icon="showPasswd ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required, rules.min]"
+            :type="showPasswd ? 'text' : 'password'"
+            name="input-10-1"
+            label="Password"
+            hint="At least 10 characters"
+            counter
+            @click:append="showPasswd = !showPasswd"
+          ></v-text-field>
+          <v-text-field
+            v-model="input.passwdConf"
+            :append-icon="showPasswdConf ? 'mdi-eye' : 'mdi-eye-off'"
+            :type="showPasswdConf ? 'text' : 'password'"
+            :rules="[]"
+            name="input-10-1"
+            label="Confirm Password"
+            value="this.passwdConf"
+            counter
+            @click:append="showPasswdConf = !showPasswdConf"
+          ></v-text-field>
           </v-card-text>
         </v-card>
       </v-col>
@@ -62,6 +98,24 @@
 export default {
   name: 'login',
   components: {
+  },
+  data () {
+    return {
+      showPasswd: false,
+      showPasswdConf: false,
+      passwdMatch:'',
+      password: '',
+      passwdConf: '',
+      rules: {
+        required: value => !!value || 'Required.',
+        min: v => v.length >= 10 || 'Min 10 characters',
+        passwdMatch: () => ('The passwords you entered don\'t match'),
+      },
+      input: {
+        password: '',
+        passwd: ''
+      },
+    }
   }
 }
 </script>
