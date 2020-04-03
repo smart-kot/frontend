@@ -103,7 +103,7 @@ export default {
     return {
       showPasswd: false,
       showPasswdConf: false,
-      passwdMatch:'',
+      passwdMatch: '',
       password: '',
       passwdConf: '',
       rules: {
