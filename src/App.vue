@@ -24,7 +24,7 @@
     </v-content>
 
     <v-footer app>
-      <span>&copy; Smart-kot 2019</span>
+      <span>&copy; Smart-kot 2020</span>
     </v-footer>
   </v-app>
 </template>
