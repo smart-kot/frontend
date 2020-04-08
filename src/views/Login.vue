@@ -6,9 +6,9 @@
     
     >
       <v-col 
-        xs="0"
-        sm="0"
-        md="12"
+        xs="12"
+        sm="12"
+        md="2"
       ></v-col>
       <v-col
         xs="12"
@@ -96,9 +96,9 @@
         </v-card>
       </v-col>
       <v-col
-        xs="0"
-        sm="0"
-        md="12"
+        xs="12"
+        sm="12"
+        md="2"
       >
       </v-col>
     </v-row>
