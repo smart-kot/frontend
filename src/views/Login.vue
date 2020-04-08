@@ -2,12 +2,18 @@
   <div class="login">
     <v-row
     full-width
-    cols="2"
+    justify="center"
     
     >
-      <v-col cols="2"></v-col>
+      <v-col 
+        xs="0"
+        sm="0"
+        md="12"
+      ></v-col>
       <v-col
-        cols="4"
+        xs="12"
+        sm="8"
+        md="4"
       >
         <v-card
           class="mx-auto text-left"
@@ -30,7 +36,9 @@
         
       </v-col>
       <v-col
-        cols="4"
+        xs="12"
+        sm="8"
+        md="4"
       >
         <v-card
           class="mx-auto text-left"
@@ -51,7 +59,12 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="2"></v-col>
+      <v-col
+        xs="0"
+        sm="0"
+        md="12"
+      >
+      </v-col>
     </v-row>
   </div>
 </template>
