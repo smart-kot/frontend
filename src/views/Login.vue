@@ -106,7 +106,7 @@
               error="this.error"
               @click:append="showSignUpPasswdConf = !showSignUpPasswdConf"
             ></v-text-field>
-            <v-btn class="ma-2" outlined color="#ff6200">Sign Up</v-btn>
+            <v-btn class="ma-2" outlined color="#ff6200" >Sign Up</v-btn>
           </v-card-text>
         </v-card>
       </v-col>
