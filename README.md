@@ -21,4 +21,11 @@ npm run lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Used colors
+
+- orange color : rgb(255, 96, 0) hex : #ff6200
+
+- grey color : rgb(126, 109, 109) hex: #7e6d6d

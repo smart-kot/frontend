@@ -16,7 +16,8 @@
         md="4"
       >
         <v-card
-          class="mx-auto text-left"
+          class="mx-auto justify-center"
+          
         >
           <v-img
             class="align-end"
@@ -30,7 +31,20 @@
             </v-card-title>
           </v-img>
           <v-card-text>
-            Login
+            <v-text-field
+              v-model="inputLogin.username"
+              label="Username"
+            ></v-text-field>
+            <v-text-field
+              v-model="inputLogin.password"
+              :append-icon="showLoginPasswd ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="[rules.required]"
+              :type="showLoginPasswd ? 'text' : 'password'"
+              name="input-10-1"
+              label="Password"
+              @click:append="showLoginPasswd = !showLoginPasswd"
+            ></v-text-field>
+            <v-btn class="ma-2" outlined color="#ff6200">Login</v-btn>
           </v-card-text>
         </v-card>
         
@@ -41,7 +55,7 @@
         md="4"
       >
         <v-card
-          class="mx-auto text-left"
+          class="mx-auto justify-center"
         >
           <v-img
             class="align-end"
@@ -56,42 +70,43 @@
           </v-img>
           <v-card-text>
             <v-text-field
-              v-model="message1"
+              v-model="inputSignUp.firstName"
               label="First Name"
-              clearable
             ></v-text-field>
             <v-text-field
-              v-model="message1"
+              v-model="inputSignUp.lastName"
               label="Last Name"
-              clearable
             ></v-text-field>
             <v-text-field
-              v-model="message1"
+              v-model="inputSignUp.username"
+              label="Username"
+            ></v-text-field>
+            <v-text-field
+              v-model="inputSignUp.email"
               label="E-mail"
-              clearable
             ></v-text-field>
             <v-text-field
-            v-model="input.password"
-            :append-icon="showPasswd ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
-            :type="showPasswd ? 'text' : 'password'"
-            name="input-10-1"
-            label="Password"
-            hint="At least 10 characters"
-            counter
-            @click:append="showPasswd = !showPasswd"
-          ></v-text-field>
-          <v-text-field
-            v-model="input.passwdConf"
-            :append-icon="showPasswdConf ? 'mdi-eye' : 'mdi-eye-off'"
-            :type="showPasswdConf ? 'text' : 'password'"
-            :rules="[]"
-            name="input-10-1"
-            label="Confirm Password"
-            value="this.passwdConf"
-            counter
-            @click:append="showPasswdConf = !showPasswdConf"
-          ></v-text-field>
+              v-model="inputSignUp.password"
+              :append-icon="showSignUpPasswd ? 'mdi-eye' : 'mdi-eye-off'"
+              :rules="[rules.required, rules.min]"
+              :type="showPasswd ? 'text' : 'password'"
+              name="input-10-1"
+              label="Password"
+              hint="At least 10 characters"
+              counter
+              @click:append="showSignUpPasswd = !showSignUpPasswd"
+            ></v-text-field>
+            <v-text-field
+              v-model="inputSignUp.passwdConf"
+              :append-icon="showSignUpPasswdConf ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="showSignUpPasswdConf ? 'text' : 'password'"
+              :rules="[rules.passwdMatch]"
+              name="input-10-1"
+              label="Confirm Password"
+              error="this.error"
+              @click:append="showSignUpPasswdConf = !showSignUpPasswdConf"
+            ></v-text-field>
+            <v-btn class="ma-2" outlined color="#ff6200">Sign Up</v-btn>
           </v-card-text>
         </v-card>
       </v-col>
@@ -114,19 +129,25 @@ export default {
   },
   data () {
     return {
-      showPasswd: false,
-      showPasswdConf: false,
-      passwdMatch: '',
-      password: '',
-      passwdConf: '',
+      error: false,
+      showLoginPasswd: false,
+      showSignUpPasswd: false,
+      showSignUpPasswdConf: false,
       rules: {
         required: value => !!value || 'Required.',
-        min: v => v.length >= 10 || 'Min 10 characters',
-        passwdMatch: () => ('The passwords you entered don\'t match'),
+        passwdMatch: () => this.input.password === this.input.passwdConf || ('The passwords you entered don\'t match' && this.error == true),
       },
-      input: {
+      inputSignUp: {
+        firstName: '',
+        lastName: '',
+        username: '',
+        email: '',
         password: '',
-        passwd: ''
+        passwdConf: ''
+      },
+      inputLogin: {
+        username: '',
+        password: ''
       },
     }
   }
